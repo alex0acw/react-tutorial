@@ -7,6 +7,7 @@ import CounterGroupSum from './components/CounterGroupSum';
 
 function App() {
   const [numCounter, setnumCounter] = useState(0);
+  const [sum, setSum] = useState(0)
   const onChange = (e) => {
     setnumCounter(parseInt(e.target.value));
   }
@@ -19,8 +20,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <input type="number" onChange={onChange}></input>
-        <CounterGroupSum></CounterGroupSum>
-        <CounterGroup numCounter={numCounter} />
+        <CounterGroupSum sum={sum}></CounterGroupSum>
+        <CounterGroup numCounter={numCounter}
+          onSumChange={(newSum) => {
+            setSum(newSum)
+          }}
+        />
       </header>
     </div>
   );

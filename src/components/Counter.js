@@ -1,14 +1,20 @@
 import React, { Component, useState, useEffect } from 'react'
 import "./Counter.css"
 
-export default function Counter() {
-    const [count, setCount] = useState(0);
+export default function Counter({ initCount, onCountChange }) {
+    const [count, setCount] = useState(initCount);
+
+    useEffect(() => {
+        setCount(initCount)
+    }, [initCount])
 
     const onIncrease = () => {
         setCount(count + 1);
+        onCountChange(count + 1)
     }
     const onDecrease = () => {
         setCount(count - 1);
+        onCountChange(count - 1)
     }
 
     const buttonStyle = {
