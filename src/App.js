@@ -1,22 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from "./components/Counter.js"
+import CounterGroup from './components/CounterGroup';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [numCounter, setnumCounter] = useState(0);
+  const onChange = (e) => {
+    setnumCounter(parseInt(e.target.value));
+  }
+
+  useEffect(() => {
+    // action on update of movies
+  }, [numCounter]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input type="number" onChange={onChange}></input>
+        <CounterGroup numCounter={numCounter} />
       </header>
     </div>
   );
