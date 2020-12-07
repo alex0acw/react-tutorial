@@ -3,6 +3,7 @@ import './App.css';
 import Counter from "./components/Counter.js"
 import CounterGroup from './components/CounterGroup';
 import { useEffect, useState } from 'react';
+import CounterGroupSum from './components/CounterGroupSum';
 
 function App() {
   const [numCounter, setnumCounter] = useState(0);
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <input type="number" onChange={onChange}></input>
+        <CounterGroupSum></CounterGroupSum>
         <CounterGroup numCounter={numCounter} />
       </header>
     </div>
