@@ -13,8 +13,6 @@ export default function ({ numCounter = 0, onSumChange }) {
     return (
         <div >
             {counterVals.map(((val, index) => {
-                console.log("render counters")
-                console.log(counterVals)
                 return (
                     < Counter key={index} initCount={val}
                         onCountChange={(x) => {
