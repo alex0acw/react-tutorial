@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react'
+import "./Counter.css"
 
 export default function Counter() {
     const [count, setCount] = useState(0);
-    
+
     const onIncrease = () => {
         setCount(count + 1);
     }
@@ -10,12 +11,16 @@ export default function Counter() {
         setCount(count - 1);
     }
 
+    const buttonStyle = {
+        width: "10px"
+    }
+
     return (
-        <section className="counter">
-            <input type="button" value="+" onClick={onIncrease}></input>
-            <span>{count}</span>
-            <input type="button" value="-" onClick={onDecrease}></input>
-        </section>
+        <div className="counter" style={{ height: "35px", backgroundColor: "black", margin: "5px" }}>
+            <input type="button" style={buttonStyle} value="+" onClick={onIncrease}></input>
+            <span style={{ width: "100%" }}>{count}</span>
+            <input type="button" style={buttonStyle} value="-" onClick={onDecrease}></input>
+        </div >
 
     )
 }
