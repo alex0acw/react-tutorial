@@ -1,16 +1,29 @@
 .counter {
     display: flex;
     width: 200px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .counter input[type=button] {
     height: 100%;
     box-sizing: border-box;
     font-weight: 900;
-    font-size: 15px;
-    text-align: center; 
+    text-align: center;
     vertical-align: middle;
+    display: flex;
+    border: 0;
+    padding: 0;
+    min-width: 1cm;
+    border-radius: 5px;
+    background-color: white;
 }
-.counter span{
+
+.counter input[type=button]:hover {
+    background-color: #ddd;
+}
+
+.counter span {
     width: 100%;
 }

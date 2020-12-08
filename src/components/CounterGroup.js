@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function CounterGroup({ numCounter = 0, onSumChange }) {
     const [counterVals, setCounterVals] = useState([]);
 
-    useEffect(() => {
-        setCounterVals(new Array(numCounter > 0 ? numCounter : 0).fill(0))
-    }, [numCounter]);
+    useEffect(
+        () => {
+            setCounterVals(new Array(numCounter > 0 ? numCounter : 0).fill(0))
+        },
+        [numCounter]);
 
     useEffect(() => {
         onSumChange(counterVals.reduce((a, b) => a + b, 0))
@@ -17,10 +20,10 @@ export default function CounterGroup({ numCounter = 0, onSumChange }) {
         <div >
             {counterVals.map(((val, index) => {
                 return (
-                    < Counter key={index} initCount={val}
-                        onCountChange={(x) => {
+                    < Counter key={uuidv4()} initCount={val}
+                        onCountChange={(newCount) => {
                             const newCounterVals = counterVals.slice()
-                            newCounterVals[index] = x;
+                            newCounterVals[index] = newCount;
                             setCounterVals(newCounterVals);
                         }}
                     />)
