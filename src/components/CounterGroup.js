@@ -4,7 +4,7 @@ import Counter from "./Counter";
 import CounterContainer from "../containers/CounterContainer";
 import { v4 as uuidv4 } from 'uuid';
 
-export default function CounterGroup({ numCounter = 0, size }) {
+export default function CounterGroup({ size }) {
     const [counterVals, setCounterVals] = useState([]);
 
     useEffect(
@@ -18,15 +18,10 @@ export default function CounterGroup({ numCounter = 0, size }) {
             {counterVals.map(((val, index) => {
                 return (
                     < CounterContainer key={uuidv4()}
-                        
+
                     />)
             }
             ))}
         </div>
     )
-}
-
-CounterGroup.propTypes = {
-    size: PropTypes.number,
-    onSumChange: PropTypes.func
 }
