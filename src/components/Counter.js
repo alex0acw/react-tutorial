@@ -30,3 +30,15 @@ export default function Counter({ initCount, onCountChange }) {
 
     )
 }
+
+export class Counter2 extends Component {
+    render() {
+        return (
+            <div>
+                {/* <input type="button" style={buttonStyle} value="+" onClick={onIncrease}></input>
+                <span style={{ width: "100%" }}>{count}</span>
+                <input type="button" style={buttonStyle} value="-" onClick={onDecrease}></input> */}
+            </div>
+        )
+    }
+}

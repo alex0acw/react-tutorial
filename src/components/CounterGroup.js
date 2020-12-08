@@ -7,9 +7,11 @@ export default function ({ numCounter = 0, onSumChange }) {
     useEffect(() => {
         setCounterVals(new Array(numCounter > 0 ? numCounter : 0).fill(0))
     }, [numCounter]);
+    
     useEffect(() => {
         onSumChange(counterVals.reduce((a, b) => a + b, 0))
     }, [counterVals])
+
     return (
         <div >
             {counterVals.map(((val, index) => {

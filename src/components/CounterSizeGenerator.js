@@ -1,4 +1,5 @@
-export default function CounterSizeGenerator({ initNum, onNumChange }) {
+import PropTypes from "prop-types";
+export default function CounterSizeGenerator({ initNum = 0, onNumChange }) {
     return (
         <div>
             <input type="number" defaultValue={initNum} onChange={(e) => {
@@ -6,4 +7,8 @@ export default function CounterSizeGenerator({ initNum, onNumChange }) {
             }}></input>
         </div>
     )
+}
+CounterSizeGenerator.propTypes = {
+    initNum: PropTypes.number,
+    onNumChange: PropTypes.func
 }
