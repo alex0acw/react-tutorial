@@ -5,6 +5,5 @@ const mapStateToProps = (state) => ({
     size: state.size
 })
 
-
 const CounterGroupContainer = connect(mapStateToProps, null)(CounterGroup)
 export default CounterGroupContainer;
