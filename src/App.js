@@ -1,5 +1,7 @@
 import './App.css';
+import Counter from './components/Counter';
 import MultipleCounter from './components/MultipleCounter';
+import CounterContainer from './containers/CounterContainer';
 
 function App() {
   return (

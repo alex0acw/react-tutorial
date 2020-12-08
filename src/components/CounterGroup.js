@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
+import CounterContainer from "../containers/CounterContainer";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function CounterGroup({ numCounter = 0, onSumChange }) {
@@ -20,7 +21,7 @@ export default function CounterGroup({ numCounter = 0, onSumChange }) {
         <div >
             {counterVals.map(((val, index) => {
                 return (
-                    < Counter key={uuidv4()} initCount={val}
+                    < CounterContainer key={uuidv4()} initCount={val}
                         onCountChange={(newCount) => {
                             const newCounterVals = counterVals.slice()
                             newCounterVals[index] = newCount;
