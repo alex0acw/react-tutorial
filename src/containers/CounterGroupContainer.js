@@ -1,12 +1,10 @@
 import { connect } from 'react-redux'
-import { decreaseSum, increaseSum } from "../redux/actions";
-import Counter from "../components/Counter";
+import CounterGroup from "../components/CounterGroup";
 
-const mapDispatchToProps = (dispatch) => ({
-    increase: () => { dispatch(increaseSum()) },
-    decrease: () => { dispatch(decreaseSum()) },
+const mapStateToProps = (state) => ({
+    size: state.size
 })
 
 
-const CounterContainer = connect(null, mapDispatchToProps)(Counter)
-export default CounterContainer;
+const CounterGroupContainer = connect(mapStateToProps, null)(CounterGroup)
+export default CounterGroupContainer;

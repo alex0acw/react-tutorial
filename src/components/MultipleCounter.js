@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CounterGroupSum from './CounterGroupSum';
-import CounterSizeGenerator from './CounterSizeGenerator';
-import CounterGroup from './CounterGroup';
+import CounterSizeGeneratorContainer from '../containers/CounterSizeGeneratorContainer';
+import CounterGroupContainer from '../containers/CounterGroupContainer';
 import "./MultipleCounter.css"
 import CounterGroupSumContainer from '../containers/CounterGroupSumContainer';
 
@@ -11,17 +11,9 @@ export default function () {
 
     return (
         <div className={"multiple-counter"} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <CounterSizeGenerator
-                initNum={0}
-                onNumChange={(newNum) => (setnumCounter(newNum))}
-            />
+            <CounterSizeGeneratorContainer />
             <CounterGroupSumContainer/>
-            <CounterGroup
-                numCounter={numCounter}
-                onSumChange={(newSum) => {
-                    setSum(newSum)
-                }}
-            />
+            <CounterGroupContainer />
         </div>
     );
 }
