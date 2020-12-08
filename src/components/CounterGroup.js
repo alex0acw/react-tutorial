@@ -1,13 +1,14 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Counter from "./Counter";
 
-export default function ({ numCounter = 0, onSumChange }) {
+export default function CounterGroup({ numCounter = 0, onSumChange }) {
     const [counterVals, setCounterVals] = useState([]);
 
     useEffect(() => {
         setCounterVals(new Array(numCounter > 0 ? numCounter : 0).fill(0))
     }, [numCounter]);
-    
+
     useEffect(() => {
         onSumChange(counterVals.reduce((a, b) => a + b, 0))
     }, [counterVals])
@@ -27,4 +28,9 @@ export default function ({ numCounter = 0, onSumChange }) {
             ))}
         </div>
     )
+}
+
+CounterGroup.propTypes = {
+    numCounter: PropTypes.number,
+    onSumChange: PropTypes.func
 }
